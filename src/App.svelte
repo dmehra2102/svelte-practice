@@ -1,6 +1,6 @@
 <script>
-  let name = 'Svelte';
+  import Counter from "./lib/Counter.svelte";
 </script>
 
-<h1>Hello {name}!</h1>
+<Counter />
 
