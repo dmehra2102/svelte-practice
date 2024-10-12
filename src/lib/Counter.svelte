@@ -23,7 +23,7 @@
   Clicks {count}
 </button>
 
-<Button on:click|once={()=>{ alert("Hello World for 1 time only")}}>
+<Button on:click|once={()=>{ alert("Hello World for 1 time only")}} disabled>
   <div slot="icon-div" style:width="20px"><DiCodeigniter /></div>
   My Button</Button>
 
@@ -35,6 +35,11 @@
     background: #000;
     &:hover {
       background: variables.$color;
+      cursor: pointer;
+    }
+    &:disabled{
+      opacity: 0.6;
+      cursor: not-allowed;
     }
   }
 </style>
