@@ -23,7 +23,7 @@
   Clicks {count}
 </button>
 
-<Button>
+<Button on:click|once={()=>{ alert("Hello World for 1 time only")}}>
   <div slot="icon-div" style:width="20px"><DiCodeigniter /></div>
   My Button</Button>
 

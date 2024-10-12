@@ -1,6 +1,6 @@
 <script></script>
 
-<button>
+<button on:click>
     {#if $$slots["icon-div"]}
         <slot name="icon-div" />
     {/if}
