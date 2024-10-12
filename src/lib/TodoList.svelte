@@ -1,13 +1,20 @@
 <script>
     import {v4} from "uuid";
   import Button from "./Button.svelte";
+  import { createEventDispatcher } from "svelte";
 
   export let todos = [];
   let inputText = "";
 
+  // We are creating custom event here to pass the data from child to parent component.
+  let dispatch = createEventDispatcher();
+
   function handleAddTodo(){
-    todos = [...todos, { id : v4(), title: inputText, completed: false}];
-    inputText = "";
+   const isCancelable = dispatch("addTodo", {id: v4(), title: inputText, completed: false},{cancelable: true});
+
+   if(isCancelable){
+     inputText = "";
+   }
   }
 </script>
 
